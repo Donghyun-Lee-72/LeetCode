@@ -1,5 +1,6 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
+        # copied from https://sub2n.github.io/2019/04/22/LeetCode-5-Longest-Palindromic-Substring/
         if len(s) <= 1:
             return s
         i,l=0,0
