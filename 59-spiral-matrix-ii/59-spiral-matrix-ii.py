@@ -4,8 +4,9 @@ class Solution:
         i = 0
         next_stop = n
         x, y = 0, 0
+        cnt = 1
         
-        for cnt in range(1, n*n+1):
+        while cnt <= n*n:
             arr[y][x] = cnt
             if cnt == next_stop:
                 i += 1
