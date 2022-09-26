@@ -5,12 +5,13 @@ class Solution:
         working_list: List[int]; currently working array
         nums_partial: List[int]; remaining nums available to use
         """
-        if size == 0:           # zero size, means we finished working with current length
+        if size == 0:       # zero size, means we finished working with current length
             result.append(working_list)
             return
-        elif len(nums_partial) < size:    # more element to insert; but not enough numbers
+        elif len(nums_partial) < 0:# more element to insert; but not enough numbers
             return
         
+        result.append(working_list)
         for i in range(len(nums_partial)):
             next_working = working_list + [nums_partial[i]]
             self.subsets_helper(result, next_working, nums_partial[i+1:], size - 1)
@@ -18,6 +19,6 @@ class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         result = []
         max_size = len(nums)
-        for size in range(max_size+1):
-            self.subsets_helper(result, [], nums, size)
+        # for size in range(max_size+1):
+        self.subsets_helper(result, [], nums, max_size)
         return result
