@@ -8,16 +8,12 @@ class Solution:
         if size == 0:           # zero size, means we finished working with current length
             result.append(working_list)
             return
-        elif len(nums_partial) == 0:    # more element to insert; but no numbers left
+        elif len(nums_partial) < size:    # more element to insert; but not enough numbers
             return
         
         for i in range(len(nums_partial)):
             next_working = working_list + [nums_partial[i]]
-            next_nums_partial = nums_partial[i+1:]
-            next_size = size - 1
-            if len(next_nums_partial) < next_size:  # reduces time by removing impossible cases
-                return
-            self.subsets_helper(result, next_working, next_nums_partial, next_size)
+            self.subsets_helper(result, next_working, nums_partial[i+1:], size - 1)
     
     def subsets(self, nums: List[int]) -> List[List[int]]:
         result = []
