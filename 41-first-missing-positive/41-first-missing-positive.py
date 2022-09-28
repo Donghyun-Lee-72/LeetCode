@@ -3,7 +3,7 @@ class Solution:
         nums_dict = {}
         for num in nums:
             if num > 0:
-                nums_dict[num] = None
+                nums_dict[num] = True
         
         i = 1
         while True:
