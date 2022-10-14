@@ -11,20 +11,20 @@
  */
 class Solution {
 public:
-    vector<int> helper(vector<int> list, TreeNode* root) {
-        if (root == nullptr) { return list; }
+    void helper(vector<int>& list, TreeNode* root) {
+        if (root == nullptr) { return; }
         else {
             list.push_back(root->val);
         }
         
-        list = helper(list, root->left);
-        list = helper(list, root->right);
-        return list;
+        helper(list, root->left);
+        helper(list, root->right);
+        return;
     }
     
     vector<int> preorderTraversal(TreeNode* root) {
         vector<int> list;
-        list = helper(list, root);
+        helper(list, root);
         return list;
     }
 };
