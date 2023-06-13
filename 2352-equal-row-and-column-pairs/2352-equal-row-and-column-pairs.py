@@ -5,5 +5,6 @@ class Solution:
         # for i in range(n):
             # col = [ grid[j][i] for j in range(n) ]
         for col in zip(*grid):
-            cnt += grid.count(list(col))
+            col = list(col)
+            cnt += grid.count(col)
         return cnt
