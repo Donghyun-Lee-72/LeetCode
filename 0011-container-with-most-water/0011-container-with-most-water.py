@@ -18,6 +18,20 @@ class Solution:
             if most_water < best_water:
                 most_water = best_water
                 min_l_height = l_height
+
         
         return most_water
+
+'''
+Memory Limit Exceeded.
+for loop is expanded into 3d np.ndarray
+'''
+#         upper_multiplier = np.triu([range(-i, -i+len(height)) for i in range(len(height)-1)])
+#         height_2d = np.tile(height, (len(height)-1, 1))
+#         height_left = height[:-1].reshape(-1,1)
+        
+#         lower_bars = upper_multiplier*height_2d
+#         higher_bars = upper_multiplier*height_left
+#         water_amounts = np.where(height_2d < height_left, lower_bars, higher_bars)
+#         return water_amounts.max()
     
